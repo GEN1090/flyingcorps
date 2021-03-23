@@ -372,6 +372,10 @@ header{
     font-size: 1.5vw;
 }
 
+.contact textarea{
+    height: 15vw;
+}
+
 ::placeholder {
     color: rgb(196, 196, 196);
     padding-left: 1vw;
