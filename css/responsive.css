@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+/* スマホ表示 */
+@media screen and (min-width:480px){
+
+	/* base */
+
+	.wrapper{
+
+	}
+
+	.container{
+
+	}
+
+	.inner{
+		
+	}
+	
+	.br-sp {
+		display: none;
+	}
+
+	/* original */
+
+
+
+}
+
+
+/* タブレッド表示 */
+@media screen and (min-width:1024px){
+	
+}
