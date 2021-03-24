@@ -7,7 +7,7 @@
 	<!-- リセットCSS読み込み -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
 	<!-- CSS読み込み -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="style.css">
 	<!-- レスポンシブ読み込み -->
 	<link rel="stylesheet" href="css/responsive.css">
 
@@ -28,7 +28,7 @@
 							<img src="img/logo.png" alt="">
 						</a>
 					</div>
-					<div class="gnav">
+					<!-- <div class="gnav">
 						<nav>
 							<ul>
 								<li>
@@ -48,19 +48,100 @@
 								</li>
 							</ul>
 						</nav>
-					</div>
-					<div class="contact-icon">
+					</div> -->
+					<!-- <div class="contact-icon">
 						<a href="#contact">
 							<img src="img/contact-icon.png" alt="">
 						</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</header>
 		
-        
+		<?php
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			// フォームから送信されたデータを各変数に格納
+			$name = $_POST["name"];
+			$number = $_POST["number"];
+			$mail = $_POST["email"];
+			$message = $_POST["message"];
+			$email = "gen.guitar1090@gmail.com";
+			}
+		?>	
+		
+		<form action="confirm.php" method="post">
+			<input type="hidden" name="name" value="<?php echo $name; ?>">
+			<input type="hidden" name="number" value="<?php echo $number; ?>">
+			<input type="hidden" name="email" value="<?php echo $email; ?>">
+			<input type="hidden" name="message" value="<?php echo $message; ?>">
+		
+			<div class="wrapper">
+				<h2 class="contact-content">
+					お問い合わせ内容
+				</h2>
+				<div class="contact-confirm">
+					<div class="container">
+						<table>
+							<tbody>
+								<tr>
+									<td>お名前</td>
+									<td><?php echo $name; ?></td>
+								</tr>
+								<tr>
+									<td>電話番号</td>
+									<td><?php echo $number; ?></td>
+								</tr>
+								<tr>
+									<td>メールアドレス</td>
+									<td><?php echo $mail; ?></td>
+								</tr>
+								<tr>
+									<td>お問い合わせ内容</td>
+									<td><?php echo $message; ?></td>
+								</tr>
+							</tbody>
+						</table>
+						<button type="submit" name="submit" class="submit" value="送信する">送信する</button>
+					</div>
+				</div>
+			</div>
 
-		<footer>
+		</form>
+
+		<?php 
+
+			if (isset($_POST["submit"])) { // 送信ボタンが押された時に動作する処理
+				mb_language("ja");// 日本語をメールで送る場合
+				mb_internal_encoding("UTF-8");
+				$subject = "［自動送信］お問い合わせ内容の確認";
+				$body =  // メール本文を変数bodyに格納
+				// {$name} 様
+				"お問い合わせありがとうございます。
+				以下のお問い合わせ内容を、メールにて確認させていただきました。
+				// 【 お名前 】
+				// {$name}
+				// 【 メール 】
+				// {$mail}
+				// 【 電話番号 】
+				// {$number}
+				// 【 お問い合わせ内容 】
+				// {$message}
+				内容を確認のうえ、回答させて頂きます。
+				しばらくお待ちください。"
+				;
+				
+				$fromEmail = "contact@dream-php-seminar.com"; // 送信元のメールアドレスを変数fromEmailに格納
+				$fromName = "お問い合わせテスト";// 送信元の名前を変数fromNameに格納
+				$header = "From: " .mb_encode_mimeheader($fromName) ."<{$fromEmail}>";// ヘッダ情報を変数headerに格納する
+				mb_send_mail($email, $subject, $body, $header);// メール送信を行う//mb_send_mail("送信先メールアドレス", "件名", "メール本文","メール送信後の画面遷移");
+				header("Location: http://localhost/flying-corps/mailto.php");//送信完了画面（mailto.php）へのURLを入る
+				exit;			
+			}
+		?>
+
+		
+
+		<!-- <footer>
 			<img src="img/footer-img.png" alt="" class="footer-img">
 			<div class="container">
 				<div class="section-inner">
@@ -78,7 +159,7 @@
 					</div>
 				</div>
 			</div>
-		</footer>
+		</footer> -->
 		
 	</div>
 

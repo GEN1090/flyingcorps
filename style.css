@@ -1,0 +1,507 @@
+@charset 'UTF-8';
+
+/* BASE */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+	/* ゴシック体ベース */
+	font-family: Noto Sans JP, ヒラギノ角ゴシック, 游ゴシック, 筑紫ゴシック, Roboto, Quicksand, Montserrat, Oswald ;
+	/* 明朝体ベース */
+	/* font-family: Noto Serif JP , ヒラギノ明朝 ProN, 游明朝, 筑紫明朝, Roboto, Quicksand, Montserrat, Oswald ; */
+	color: ;
+}
+
+body{
+	line-height: 1.4;
+}
+
+a{
+	text-decoration: none;
+	transition: 0.4;
+}
+
+a:hover{
+	opacity: ;
+}
+
+.br-sp {
+	display: none;
+}
+
+/* 共通 */
+
+.wrapper{
+    width: 100%;
+}
+
+.container{
+	width: 77vw;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 1vw;
+    left: 0;
+    z-index: 100;
+}
+
+.header-inner{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1vw 0;
+    border-radius:75px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.logo{
+    width: 10vw;
+    padding-left:3vw;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.header-left a{
+    display: block;
+    width: 100%;
+}
+
+.gnav{
+    /* padding-left: 2vw; */
+}
+
+.gnav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gnav li{
+    padding-left: 2vw;
+}
+
+.gnav a{
+    font-size: 1.2vw;
+    color: #000;
+    font-weight: normal;
+}
+
+.contact-icon{
+    width: 4vw;
+    margin-left:37vw;
+}
+
+.contact-icon img{
+    width: 100%;
+}
+
+/* メイン画像 */
+
+.main-visual{
+    width: 100%;
+    height: 47.5vw;
+    background: url(img/mainvisual.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+.catch-copy{
+    font-size: 5vw;
+    color: #fff;
+    padding-top: 20vw;
+    font-weight: bold;
+    font-family: Poppins;
+}
+
+.about-us-link{
+    margin-top: 2vw;
+    padding: 0.4vw 0;
+    font-size: 1.5vw;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    width: 20vw;
+}
+
+/* 私たちについて */
+
+.about-us{
+    width: 100%;
+}
+
+.section-inner{
+    width: 100%;
+    position: relative;
+}
+
+.bg-heading {
+    font-family: Poppins;
+    font-weight: bolder;
+    font-size: 10vw;
+    letter-spacing: 0.5vw;
+    opacity: 0.2;
+    color: #000;
+    position: absolute;
+    right: -11vw;
+    top: 0;
+}
+
+.contents-img01{
+    width: 35vw;
+    position: absolute;
+    top: -3vw;
+    left: 0;
+}
+
+
+.contents-desc{
+    width :45%;
+}
+
+.contents-desc01{
+    margin-left: auto;
+    padding-top: 8vw;
+}
+
+.contents-desc h2{
+    font-size: 2.2vw;
+    font-weight: bold;
+    color: #000;
+}
+
+.contents-desc01 h2::after{
+    content: "";
+    display: inline-block;
+    width: 15vw;
+    height: 1px;
+    background-color: #000;
+    margin-left: 0.5vw;
+    vertical-align: middle;
+    margin-bottom: 0.3vw;
+}
+
+.contents-desc p{
+    font-size: 1.5vw;
+    font-weight: normal;
+    color: #000;
+    padding-top: 1.5vw;
+    line-height: 1.6;
+}
+
+.contents-img02{
+    width: 35vw;
+    /* margin-bottom: 5vw; */
+}
+
+.second-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 6vw;
+    margin-bottom: 5vw;
+}
+
+/* 事業内容 */
+.service{
+    width: 100%;
+}
+
+.section-heading-wrapper{
+    width: 100%;
+    padding: 5vw 0;
+    background-color: rgba(94,94,94,0.6);
+}
+
+.section-heading-en{
+    display: flex;    
+    align-items: center;
+    justify-content: flex-end;
+    /* width: 20vw; */
+}
+
+.section-heading-en p{
+    font-size: 1.5vw;
+    color: #fff;
+    letter-spacing: 0.4vw;
+}
+
+.heading-line{
+    background-color: #fff;
+    width: 10vw;
+    height: 1px;
+    font-family: Poppins;
+    margin-left: 1vw;
+}
+
+.service-inner{
+    width: 100%;
+    position: relative;
+}
+
+.heading-ja{
+    font-size: 5vw;
+    margin-top: 1vw;
+    color: #fff;
+    text-align: right;
+}
+
+.service-center{
+    width: 47vw;
+    margin: 0 auto;
+    font-size: 1.5vw;
+    color: #000;
+    margin-bottom: 5vw;
+}
+
+.service-bg-heading{
+    letter-spacing: 1.3vw;
+    font-size: 11vw;
+}
+
+/* 会社概要 */
+.company-bg-heading{
+    left: 1vw;
+    z-index: -1;
+}
+
+.company-heading-en{
+    font-family: Poppins;
+    font-size: 1.5vw;
+    color: #000;
+    letter-spacing: 0.3vw;
+}
+
+.company-heading-en::after{
+    content: "";
+    display: inline-block;
+    width: 15vw;
+    height: 1px;
+    background-color: #000;
+    margin-left: 0.5vw;
+    vertical-align: middle;
+    margin-bottom: 0.3vw;
+}
+
+.company-heading-ja{
+    font-size: 5vw;
+    color: #000;
+    font-weight: bold;
+    padding-top: 1vw;
+}
+
+.company-inner{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7vw;
+    padding-bottom: 5vw;
+}
+
+.company-table{
+    width: 65%;
+}
+
+.company-table table{
+    width: 100%;
+}
+
+.company-table td{
+    font-size: 1.3vw;
+    color: #000;
+    padding: 1vw 1vw 1vw 2vw;
+    background-color: #c9c9c9;
+    margin: 1px;
+    border: 3px solid #fff;
+}
+
+.company-table tr td:first-child{
+    width: 30%;
+    background-color: #9d9d9d;
+}
+
+/* お問い合わせ */
+
+.contact{
+    width: 100%;
+}
+
+.contact form {
+    width: 100%;
+    padding-top: 5vw;
+    padding-bottom:8vw;
+}
+
+.form-contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+.contact label,
+.contact input,
+.contact textarea{
+    display: block;
+}
+
+.contact label{
+    font-size: 1.5vw;
+    color: #000;
+}
+
+.contact input,
+.contact textarea{
+    border: none;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: #9d9d9d;
+    width: 55vw;
+    height: 4vw;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5vw;
+}
+
+.contact textarea{
+    height: 15vw;
+}
+
+::placeholder {
+    color: rgb(196, 196, 196);
+    padding-left: 1vw;
+    align-items: center;
+  }
+.contact textarea::placeholder {
+    padding-top: 1vw;
+  }
+
+.confirm,
+.submit {
+    margin: 0 auto;
+    width: 30vw;
+    color: #fff;
+    border: none;
+    background-color: #000;
+    font-size: 1.5vw;
+    padding: 0.8vw 0;
+    display: block;
+    border-radius: 5px;
+    margin-top: 3vw;
+    /* transition: .5s; */
+    box-shadow: 0 5px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.confirm:active,
+.submit:active{
+    transform: translateY(5px);
+}
+
+/* フッター */
+footer{
+    width: 100%;
+    position: relative;
+    padding-bottom: 7vw;
+}
+
+.footer-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30vw;
+}
+
+.footer-logo{
+    width: 10vw;
+    display: block;
+}
+
+.footer-nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    margin-top: 1.5vw;
+}
+
+.footer-nav li{
+    margin-left: 1vw;
+}
+
+.footer-nav a{
+    font-size: 1vw;
+    color: #000;
+}
+
+/* 確認ページ */
+
+.contact-content{
+    text-align: center;
+    font-size: 2vw;
+    font-weight: normal;
+    color: #000;
+    padding-top: 10vw;
+    padding-bottom: 2vw;
+}
+
+.contact-confirm{
+    width: 100%;
+    padding-bottom: 7vw;
+}
+
+.contact-confirm table{
+    width: 100%;
+}
+
+.contact-confirm table td{
+    padding: 1.5vw 1vw 1.5vw 2vw;
+    font-size: 1.5vw;
+    color: #000;
+    font-weight: normal;
+    border: 1px solid rgb(150, 150, 150);
+    background-color: #f1f1f1;
+    /* display: block; */
+}
+
+.contact-confirm table tr td:first-child{
+    width: 20vw;
+}
+
+
+/* 完了ページ */
+.thanks{
+    text-align: center;
+    font-size: 2.5vw;
+    padding-top:10vw;
+
+}
+
+.message{
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 2vw;
+    line-height: 1.8;
+}
+
+#title{
+    font-size: 1.3vw;
+    text-align: center;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: none;
+    background-color: #9d9d9d;
+    width: 13vw;
+    margin: 0 auto;
+    display: block;
+    margin-top: 3vw;
+}
