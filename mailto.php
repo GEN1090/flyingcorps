@@ -59,10 +59,9 @@
 <h2 class="thanks">送信完了</h2>
 <p class="message">お問い合わせありがとうございます。<br>
 自動返信メールをお送りしておりますのでご確認ください。<br>
-1時間たっても届かない場合はお手数ですがこちらからご連絡ください。
 </p>
 <!-- ホームのURL -->
-<form action="http://localhost/flying-corps/">
+<form action="http://xs390487.xsrv.jp/">
 <input id="title" name="submit" type="submit" value="ホームに戻る" />
 </form>
 

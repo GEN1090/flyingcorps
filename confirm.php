@@ -72,7 +72,7 @@
 		<form action="confirm.php" method="post">
 			<input type="hidden" name="name" value="<?php echo $name; ?>">
 			<input type="hidden" name="number" value="<?php echo $number; ?>">
-			<input type="hidden" name="email" value="<?php echo $email; ?>">
+			<input type="hidden" name="email" value="<?php echo $mail; ?>">
 			<input type="hidden" name="message" value="<?php echo $message; ?>">
 		
 			<div class="wrapper">
@@ -116,25 +116,25 @@
 				$subject = "［自動送信］お問い合わせ内容の確認";
 				$body =  // メール本文を変数bodyに格納
 				// {$name} 様
-				"お問い合わせありがとうございます。
-				以下のお問い合わせ内容を、メールにて確認させていただきました。
-				// 【 お名前 】
-				// {$name}
-				// 【 メール 】
-				// {$mail}
-				// 【 電話番号 】
-				// {$number}
-				// 【 お問い合わせ内容 】
-				// {$message}
-				内容を確認のうえ、回答させて頂きます。
-				しばらくお待ちください。"
-				;
+"お問い合わせありがとうございます。
+以下のお問い合わせ内容を、メールにて確認させていただきました。
+【 お名前 】
+{$name}
+【 メール 】
+{$mail}
+【 電話番号 】
+{$number}
+【 お問い合わせ内容 】
+{$message}
+内容を確認のうえ、回答させて頂きます。
+しばらくお待ちください。"
+;
 				
-				$fromEmail = "contact@dream-php-seminar.com"; // 送信元のメールアドレスを変数fromEmailに格納
-				$fromName = "お問い合わせテスト";// 送信元の名前を変数fromNameに格納
+				$fromEmail = 'gen.guitar1090@gmail.com'; // 送信元のメールアドレスを変数fromEmailに格納
+				$fromName = "お問い合わせ";// 送信元の名前を変数fromNameに格納
 				$header = "From: " .mb_encode_mimeheader($fromName) ."<{$fromEmail}>";// ヘッダ情報を変数headerに格納する
-				mb_send_mail($email, $subject, $body, $header);// メール送信を行う//mb_send_mail("送信先メールアドレス", "件名", "メール本文","メール送信後の画面遷移");
-				header("Location: http://localhost/flying-corps/mailto.php");//送信完了画面（mailto.php）へのURLを入る
+				mb_send_mail($mail, $subject, $body, $header);// メール送信を行う//mb_send_mail("送信先メールアドレス", "件名", "メール本文","メール送信後の画面遷移");
+				header("Location: http://xs390487.xsrv.jp/mailto.php");//送信完了画面（mailto.php）へのURLを入る
 				exit;			
 			}
 		?>
