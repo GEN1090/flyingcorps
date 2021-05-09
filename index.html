@@ -6,21 +6,40 @@
 	
 	<!-- リセットCSS読み込み -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+	<!-- drawer.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/css/drawer.min.css">
 	<!-- CSS読み込み -->
 	<link rel="stylesheet" href="style.css">
 	<!-- レスポンシブ読み込み -->
-	<link rel="stylesheet" href="responsive.css">
 
 	<title>株式会社Flying Corps</title>
 
-	<!-- jQuery CDN読み込み -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- jquery & iScroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+<!-- drawer.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/js/drawer.min.js"></script>
+
+<script>
+jQuery(function(){
+   jQuery('a[href^="#"]').click(function() {
+      var speed = 800;
+      var href= jQuery(this).attr("href");
+      var target = jQuery(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      jQuery('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>
+
 </head>
 <body>
 
 	<div class="wrapper">
 
 		<header>
+
 			<div class="container">
 				<div class="header-inner">
 					<div class="header-left logo">
@@ -63,7 +82,7 @@
                 <h1 class="catch-copy">
                     Catch Copy
                 </h1>
-                <a href="" class="about-us-link">
+                <a href="#about-us" class="about-us-link">
                     私たちについて
                 </a>
             </div>
@@ -81,19 +100,14 @@
 							Flying Corpsとは
 						</h2>
 						<p>
-							会社の説明が入ります。会社の説明が入ります。
-							会社の説明が入ります。会社の説明が入ります。
-							会社の説明が入ります。会社の説明が入ります。
-							会社の説明が入ります。会社の説明が入ります。
+							私達は、IT技術をコアとして、様々な高度な問題意識に基づく、創造的なコミュニケーションを解決していきます。1つ1つの異なる要望に対して、造り手の論理ではなく、使い手の論理に基づいて、最適なサービスを提供するため、その背景にある業界環境や業務内容を学び、問いと提案を繰り返しながら、技術論にとどまらない、本質的なソリューションを提供しています。
 						</p>
 					</div>
 					<div class="second-content">
 						<div class="contents-desc contents-desc02">
 							<p>
-								会社の説明が入ります。会社の説明が入ります。
-								会社の説明が入ります。会社の説明が入ります。
-								会社の説明が入ります。会社の説明が入ります。
-								会社の説明が入ります。会社の説明が入ります。
+								ビジネストレンドの変化と、多種多様なニーズに応えていくため、これまで積み上げてきたノウハウと強い使命感で、新たなシステムソリューションを創造しています。
+ベンチャー企業をはじめ、社会のあらゆる基盤で最適なソリューションを提供しています。
 							</p>
 						</div>
 						<img src="img/about-us-img02.png" alt="" class="contents-img02">
@@ -151,7 +165,7 @@
 						</div>
 						<img src="img/service-img02.png" alt="" class="contents-img02">
 					</div>
-					<div class="second-content">
+					<div class="second-content specialty">
 						<img src="img/service-img03.png" alt="" class="contents-img02">
 						<div class="contents-desc contents-desc02">
 							<h2>
@@ -280,7 +294,7 @@
 		<footer>
 			<img src="img/footer-img.png" alt="" class="footer-img">
 			<div class="container">
-				<div class="section-inner">
+				<div class="section-inner footer-sp-inner">
 					<img src="img/logo.png" alt="" class="foo	ter-logo">
 					<div class="footer-nav">
 						<nav>
@@ -299,7 +313,5 @@
 		
 	</div>
 
-	<!-- JS読み込み -->
-	<script src="js/main.js"></script>
 </body>
 </html>
